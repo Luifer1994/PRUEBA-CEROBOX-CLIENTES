@@ -43,6 +43,7 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Registrar Servicio
               </button>
+              @include('servicios.registrar')
               <div class="mt-3 table-responsive">
                 <table class="table table-striped table-hover" id="example">
                     <thead class="bg-dark text-light">
@@ -69,20 +70,14 @@
                                         <button type="button" class="btn btn-sm btn-icon btn-round btn-primary mx-2" data-toggle="modal" data-target="#editar<?=$num?>">
                                             <i class="fas fa-pencil-alt"></i>
                                         </button>
-
-                                        @include('servicios.editar')
-                                        {{-- <button type="submit" class="btn btn-sm btn-icon btn-round btn-danger" onclick="alert('Al eliminar registro no podras recuperarlo, estas seguro que deseas eliminarlo?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button> --}}
                                     </div>
                                 </td>
                             </tr>
+                            @include('servicios.editar')
                         @endforeach
                     </tbody>
                   </table>
               </div>
-
-            @include('servicios.registrar')
           </div>
         </div>
     </div>

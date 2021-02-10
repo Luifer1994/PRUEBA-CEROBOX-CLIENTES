@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="editar<?=$num?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal" id="editar<?=$num?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -9,17 +9,17 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="mx-4 my-4">
+            <div class="form-row">
 
-                <form method="POST" action="{{ route('servicios.update',$servicio->id) }}" enctype="multipart/form-data" class="row g-3">
+                <form method="POST" action="{{ route('servicios.update',$servicio->id) }}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
-                    <div class="col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" value="{{ $servicio->nombre }}" class="form-control" id="nombe" name="nombre" required>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="correo" class="form-label">Tipo de Servicio:</label>
 
                         <select id="inputState" name="tipoServicio" class="form-control">
@@ -31,11 +31,11 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="inputEmail4" class="form-label">Imagen:</label>
                         <input type="file"  value="{{ $servicio->imagen }}" id="imagen" name="imagen" accept="image/*">
                     </div>
-                    <div class="col-md-6">
+                    <div class="form-group col-md-6">
                         <h6>Imagen actual</h6>
                         <img src="{{ asset('storage/'.$servicio->foto) }}" width="80px" alt="...">
                     </div>
@@ -50,5 +50,6 @@
       </div>
     </div>
   </div>
+
 
 

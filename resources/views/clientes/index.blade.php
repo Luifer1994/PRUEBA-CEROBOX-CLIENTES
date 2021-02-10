@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 @section('titulo')
-    Clientes
+    Servicios
 @endsection
 
 @section('contenido')
@@ -43,6 +43,7 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                 Registrar Cliente
               </button>
+              @include('clientes.registrar')
               <div class="mt-3 table-responsive">
                 <table class="table table-striped table-hover" id="example">
                     <thead class="bg-dark text-light">
@@ -69,29 +70,24 @@
                                         <a href="{{ url('detalles', $cliente->id) }}" type="button" class="btn btn-sm btn-icon btn-round btn-success mx-2">
                                             <i class="fas fa-plus-circle"></i>
                                         </a>
-
                                         <button type="button" class="btn btn-sm btn-icon btn-round btn-primary mx-2" data-toggle="modal" data-target="#editar<?=$num?>">
                                             <i class="fas fa-pencil-alt"></i>
                                         </button>
-
-                                        @include('clientes.editar')
-
                                         <form method="POST" action="{{ route('clientes.destroy', $cliente->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-icon btn-round btn-danger" onclick="alert('Al eliminar registro no podras recuperarlo, estas seguro que deseas eliminarlo?')">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
-                                          </form>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
+                            @include('clientes.editar')
                         @endforeach
                     </tbody>
                   </table>
               </div>
-
-            @include('clientes.registrar')
           </div>
         </div>
     </div>
