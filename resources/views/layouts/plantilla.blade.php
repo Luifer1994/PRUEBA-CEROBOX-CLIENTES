@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css">
 
     <title>@yield('titulo')</title>
-    @yield('css')
-
+ 
   </head>
   <body>
     @include('layouts.navbar')
